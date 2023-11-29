@@ -1,65 +1,150 @@
 ﻿  Voronoi.cpp
-F:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(23,63): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-F:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(23,55): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-F:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(33,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-F:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(134,42): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-F:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(135,42): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-F:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(144,55): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-F:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(144,43): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-F:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(145,51): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-F:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(145,36): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-F:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(175,71): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-F:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(175,47): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-F:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(176,89): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-F:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(176,61): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(5,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(25,63): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(25,63): warning C4244:         with
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(25,63): warning C4244:         [
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(25,63): warning C4244:             T=float
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(25,63): warning C4244:         ]
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(25,55): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(25,55): warning C4244:         with
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(25,55): warning C4244:         [
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(25,55): warning C4244:             T=float
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(25,55): warning C4244:         ]
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(145,59): warning C4244: 'argument': conversion from 'float' to '_Ty', possible loss of data
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(145,59): warning C4244:         with
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(145,59): warning C4244:         [
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(145,59): warning C4244:             _Ty=int
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(145,59): warning C4244:         ]
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(152,48): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(162,49): warning C4244: '=': conversion from 'T' to 'int', possible loss of data
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(162,49): warning C4244:         with
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(162,49): warning C4244:         [
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(162,49): warning C4244:             T=float
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(162,49): warning C4244:         ]
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(163,49): warning C4244: '=': conversion from 'T' to 'int', possible loss of data
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(163,49): warning C4244:         with
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(163,49): warning C4244:         [
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(163,49): warning C4244:             T=float
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(163,49): warning C4244:         ]
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(164,39): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(164,39): warning C4244:         with
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(164,39): warning C4244:         [
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(164,39): warning C4244:             T=float
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(164,39): warning C4244:         ]
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(164,33): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(164,33): warning C4244:         with
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(164,33): warning C4244:         [
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(164,33): warning C4244:             T=float
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(164,33): warning C4244:         ]
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(183,38): warning C4244: '=': conversion from 'T' to 'int', possible loss of data
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(183,38): warning C4244:         with
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(183,38): warning C4244:         [
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(183,38): warning C4244:             T=float
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(183,38): warning C4244:         ]
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(184,38): warning C4244: '=': conversion from 'T' to 'int', possible loss of data
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(184,38): warning C4244:         with
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(184,38): warning C4244:         [
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(184,38): warning C4244:             T=float
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(184,38): warning C4244:         ]
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(185,39): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(185,39): warning C4244:         with
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(185,39): warning C4244:         [
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(185,39): warning C4244:             T=float
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(185,39): warning C4244:         ]
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(185,33): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(185,33): warning C4244:         with
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(185,33): warning C4244:         [
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(185,33): warning C4244:             T=float
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(185,33): warning C4244:         ]
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(136,16): warning C4101: 'dist2': unreferenced local variable
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(136,23): warning C4101: 'dist3': unreferenced local variable
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(136,9): warning C4101: 'dist1': unreferenced local variable
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(212,15): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(213,15): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(216,26): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(229,42): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(229,42): warning C4244:         with
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(229,42): warning C4244:         [
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(229,42): warning C4244:             T=float
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(229,42): warning C4244:         ]
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(230,42): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(230,42): warning C4244:         with
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(230,42): warning C4244:         [
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(230,42): warning C4244:             T=float
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(230,42): warning C4244:         ]
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(237,55): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(237,55): warning C4244:         with
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(237,55): warning C4244:         [
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(237,55): warning C4244:             T=float
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(237,55): warning C4244:         ]
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(237,43): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(237,43): warning C4244:         with
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(237,43): warning C4244:         [
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(237,43): warning C4244:             T=float
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(237,43): warning C4244:         ]
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(238,51): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(238,51): warning C4244:         with
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(238,51): warning C4244:         [
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(238,51): warning C4244:             T=float
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(238,51): warning C4244:         ]
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(238,36): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(238,36): warning C4244:         with
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(238,36): warning C4244:         [
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(238,36): warning C4244:             T=float
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(238,36): warning C4244:         ]
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(257,29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(258,44): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(258,44): warning C4244:         with
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(258,44): warning C4244:         [
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(258,44): warning C4244:             T=float
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(258,44): warning C4244:         ]
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(258,36): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(258,36): warning C4244:         with
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(258,36): warning C4244:         [
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(258,36): warning C4244:             T=float
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(258,36): warning C4244:         ]
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(271,71): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(271,71): warning C4244:         with
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(271,71): warning C4244:         [
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(271,71): warning C4244:             T=float
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(271,71): warning C4244:         ]
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(271,47): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(271,47): warning C4244:         with
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(271,47): warning C4244:         [
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(271,47): warning C4244:             T=float
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(271,47): warning C4244:         ]
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(272,89): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(272,89): warning C4244:         with
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(272,89): warning C4244:         [
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(272,89): warning C4244:             T=float
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(272,89): warning C4244:         ]
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(272,61): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(272,61): warning C4244:         with
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(272,61): warning C4244:         [
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(272,61): warning C4244:             T=float
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(272,61): warning C4244:         ]
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(288,29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(289,44): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(289,44): warning C4244:         with
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(289,44): warning C4244:         [
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(289,44): warning C4244:             T=float
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(289,44): warning C4244:         ]
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(289,36): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(289,36): warning C4244:         with
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(289,36): warning C4244:         [
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(289,36): warning C4244:             T=float
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(289,36): warning C4244:         ]
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(299,29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(300,44): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(300,44): warning C4244:         with
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(300,44): warning C4244:         [
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(300,44): warning C4244:             T=float
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(300,44): warning C4244:         ]
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(300,36): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(300,36): warning C4244:         with
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(300,36): warning C4244:         [
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(300,36): warning C4244:             T=float
+E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(300,36): warning C4244:         ]
   main.cpp
   Generating Code...
-  Voronoi_Fracture.vcxproj -> F:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\x64\Debug\Voronoi_Fracture.exe
+  Voronoi_Fracture.vcxproj -> E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\x64\Debug\Voronoi_Fracture.exe
