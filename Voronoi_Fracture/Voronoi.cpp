@@ -241,7 +241,7 @@ void Voronoi::Draw(sf::RenderWindow& window)
     shape.setOutlineThickness(2);
     window.draw(shape);
 
-    DrawVoxels(window);
+    //DrawVoxels(window);
 
     DrawFeaturePoints(window);
 
@@ -294,13 +294,13 @@ void Voronoi::DrawVerticies(sf::RenderWindow& window)
     }
 
     //draw edges (test)
-    for (sf::Vector2f edge : m_edgePoints)
-    {
-        sf::CircleShape dot(radius);
-        dot.setOrigin(sf::Vector2f(radius, radius));//set origin to mid point
-        dot.setPosition(edge);
-        dot.setFillColor(sf::Color::Magenta);
+    //for (sf::Vector2f edge : m_edgePoints)
+    //{
+    //    sf::CircleShape dot(radius);
+    //    dot.setOrigin(sf::Vector2f(radius, radius));//set origin to mid point
+    //    dot.setPosition(edge);
+    //    dot.setFillColor(sf::Color::Magenta);
 
-        window.draw(dot);
-    }
+    //    window.draw(dot);
+    //}
 }

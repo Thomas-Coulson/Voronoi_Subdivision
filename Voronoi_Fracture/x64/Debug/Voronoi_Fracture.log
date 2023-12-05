@@ -134,17 +134,6 @@ E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Frac
 E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(289,36): warning C4244:         [
 E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(289,36): warning C4244:             T=float
 E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(289,36): warning C4244:         ]
-E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(299,29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(300,44): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(300,44): warning C4244:         with
-E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(300,44): warning C4244:         [
-E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(300,44): warning C4244:             T=float
-E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(300,44): warning C4244:         ]
-E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(300,36): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(300,36): warning C4244:         with
-E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(300,36): warning C4244:         [
-E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(300,36): warning C4244:             T=float
-E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\Voronoi_Fracture\Voronoi.cpp(300,36): warning C4244:         ]
   main.cpp
   Generating Code...
   Voronoi_Fracture.vcxproj -> E:\University\Year 3\Semester 1\Physics\Voronoi\Voronoi_Subdivision\x64\Debug\Voronoi_Fracture.exe
