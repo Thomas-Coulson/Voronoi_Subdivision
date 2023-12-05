@@ -180,24 +180,24 @@ void Voronoi::FindVertecies()
 
         ///////////////////////////////////////////////////////////////////- Testing edge finding
         //find midpoint of trio
-        xMid = (point1.x + point2.x) / 2;// average x positions
-        yMid = (point1.y + point2.y) / 2;// average y positions
-        midpoint = sf::Vector2f(xMid, yMid);
+        //xMid = (point1.x + point2.x) / 2;// average x positions
+        //yMid = (point1.y + point2.y) / 2;// average y positions
+        //midpoint = sf::Vector2f(xMid, yMid);
 
-        //find midpoint in voxel space
-        for (sf::Vector2f voxelPos : m_voxelSubdivision)
-        {
-            if (midpoint.x >= (voxelPos.x - (m_voxelSubdivisionSize / 2)) && midpoint.x < voxelPos.x + (m_voxelSubdivisionSize / 2)
-                && midpoint.y >= voxelPos.y - (m_voxelSubdivisionSize / 2) && midpoint.y < voxelPos.y + (m_voxelSubdivisionSize / 2))
-            {
-                midpoint = voxelPos;
-            }
-        }
+        ////find midpoint in voxel space
+        //for (sf::Vector2f voxelPos : m_voxelSubdivision)
+        //{
+        //    if (midpoint.x >= (voxelPos.x - (m_voxelSubdivisionSize / 2)) && midpoint.x < voxelPos.x + (m_voxelSubdivisionSize / 2)
+        //        && midpoint.y >= voxelPos.y - (m_voxelSubdivisionSize / 2) && midpoint.y < voxelPos.y + (m_voxelSubdivisionSize / 2))
+        //    {
+        //        midpoint = voxelPos;
+        //    }
+        //}
 
-        if (midpoint == voxelPoint)
-        {
-            m_edgePoints.push_back(voxelPoint);
-        }
+        //if (midpoint == voxelPoint)
+        //{
+        //    m_edgePoints.push_back(voxelPoint);
+        //}
 
     }
 
