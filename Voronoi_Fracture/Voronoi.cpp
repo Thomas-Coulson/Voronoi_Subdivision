@@ -110,10 +110,10 @@ void Voronoi::Reset()
 
 void Voronoi::FindVertecies()
 {
-    std::cout << "Finding Verticies" << std::endl;
+    std::cout << "----------------- Finding Verticies" << std::endl;
     //m_voxelFeaturePoints.clear();
 
-    //find voxels that contain the feature points (Dont need this)
+    //find voxels that contain the feature points
     for (sf::Vector2f voxelPos : m_voxelSubdivision)
     {
         for (FeaturePoint featurePoint : m_featurePoints)
@@ -131,55 +131,64 @@ void Voronoi::FindVertecies()
     //Search through voxels
     //vertex is where each of ITS NEAREST feature points are equi-distant
 
-    std::vector<int> pointDistances;
+    /*std::vector<int> pointDistances;
     sf::Vector2f point1, point2, point3, midpoint;
     int dist1, dist2, dist3, currentDist;
-    int xMid, yMid;
+    int xMid, yMid;*/
 
     //for each voxel, we find its closet 3 feature points
-    for (sf::Vector2f voxelPoint : m_voxelSubdivision)
-    {
-        pointDistances.clear();
-        for (sf::Vector2f voxFeaturePointDists : m_voxelFeaturePoints)
-        {
-            pointDistances.push_back(DistanceBetweenPoints(voxelPoint, voxFeaturePointDists));
-        }
+    //for (sf::Vector2f voxelPoint : m_voxelSubdivision)
+    //{
+    //    pointDistances.clear();
+    //    for (sf::Vector2f voxFeaturePointDists : m_voxelFeaturePoints)
+    //    {
+    //        pointDistances.push_back(DistanceBetweenPoints(voxelPoint, voxFeaturePointDists));
+    //    }
 
-        std::sort(pointDistances.begin(), pointDistances.end());//sorts all feature point positions in ascending order
+    //    std::sort(pointDistances.begin(), pointDistances.end());//sorts all feature point positions in ascending order
 
-        for (sf::Vector2f voxFeaturePoint : m_voxelFeaturePoints)//points 1 2 and 3 are this voxel's 3 closest feature points
-        {
-            currentDist = DistanceBetweenPoints(voxelPoint, voxFeaturePoint);
-            if (currentDist == pointDistances[0])
-                point1 = voxFeaturePoint;
-            else if (currentDist == pointDistances[1])
-                point2 = voxFeaturePoint;
-            else if (currentDist == pointDistances[2])
-                point3 = voxFeaturePoint;
-        }
+    //    for (sf::Vector2f voxFeaturePoint : m_voxelFeaturePoints)//points 1 2 and 3 are this voxel's 3 closest feature points
+    //    {
+    //        currentDist = DistanceBetweenPoints(voxelPoint, voxFeaturePoint);
+    //        if (currentDist == pointDistances[0])
+    //        {
+    //            point1 = voxFeaturePoint;
+    //        }
+    //        else if (currentDist == pointDistances[1])
+    //        {
+    //            point2 = voxFeaturePoint;
+    //        }
+    //        else if (currentDist == pointDistances[2])
+    //        {
+    //            point3 = voxFeaturePoint;
+    //        }
+    //    }
 
-        //find midpoint of trio
-        xMid = (point1.x + point2.x + point3.x) / 3;// average x positions
-        yMid = (point1.y + point2.y + point3.y) / 3;// average y positions
-        midpoint = sf::Vector2f(xMid, yMid);
+    //    //find midpoint of trio
+    //    xMid = (point1.x + point2.x + point3.x) / 3;// average x positions
+    //    yMid = (point1.y + point2.y + point3.y) / 3;// average y positions
+    //    midpoint = sf::Vector2f(xMid, yMid);
 
-        //find midpoint in voxel space
-        for (sf::Vector2f voxelPos : m_voxelSubdivision)
-        {
-            if (midpoint.x >= (voxelPos.x - (m_voxelSubdivisionSize / 2)) && midpoint.x < voxelPos.x + (m_voxelSubdivisionSize / 2)
-                && midpoint.y >= voxelPos.y - (m_voxelSubdivisionSize / 2) && midpoint.y < voxelPos.y + (m_voxelSubdivisionSize / 2))
-            {
-                midpoint = voxelPos;
-            }
-        }
+    //    //find midpoint in voxel space
+    //    for (sf::Vector2f voxelPos : m_voxelSubdivision)
+    //    {
+    //        if (midpoint.x >= (voxelPos.x - (m_voxelSubdivisionSize / 2)) && midpoint.x < voxelPos.x + (m_voxelSubdivisionSize / 2)
+    //            && midpoint.y >= voxelPos.y - (m_voxelSubdivisionSize / 2) && midpoint.y < voxelPos.y + (m_voxelSubdivisionSize / 2))
+    //        {
+    //            midpoint = voxelPos;
+    //        }
+    //    }
 
-        if (midpoint == voxelPoint)
-        {
-            m_verticies.push_back(voxelPoint);
-        }
+    //    if (midpoint == voxelPoint)
+    //    {
+    //        std::cout << "distance to closest point 1 = " << DistanceBetweenPoints(voxelPoint, point1) << std::endl;
+    //        std::cout << "distance to closest point 2 = " << DistanceBetweenPoints(voxelPoint, point2) << std::endl;
+    //        std::cout << "distance to closest point 3 = " << DistanceBetweenPoints(voxelPoint, point3) << std::endl;
+    //        m_verticies.push_back(voxelPoint);
+    //    }
 
         ///////////////////////////////////////////////////////////////////- Testing edge finding
-        //find midpoint of trio
+        ////find midpoint of trio
         //xMid = (point1.x + point2.x) / 2;// average x positions
         //yMid = (point1.y + point2.y) / 2;// average y positions
         //midpoint = sf::Vector2f(xMid, yMid);
@@ -199,11 +208,64 @@ void Voronoi::FindVertecies()
         //    m_edgePoints.push_back(voxelPoint);
         //}
 
+    //}
+
+    //std::vector<int> pointDistances;
+    
+    
+
+    for (sf::Vector2f voxelPoint : m_voxelSubdivision)
+    {
+
+        std::vector<int> pointDistances;
+        for (sf::Vector2f featurePoint : m_voxelFeaturePoints)
+        {
+            pointDistances.push_back(DistanceBetweenPoints(voxelPoint, featurePoint));
+        }
+
+        int smallestDistIndex = 0;
+        //int currentShortestDistance;
+
+        //for (int i = 0; i < pointDistances.size(); i++)
+        //{
+        //    if (i == 0)
+        //    {
+        //        smallestDistIndex = i;
+        //    }
+        //    else 
+        //    {
+        //        if (pointDistances[i] < pointDistances[smallestDistIndex])
+        //        {
+        //            smallestDistIndex = i;
+        //        }
+        //    }
+        //}
+
+        //int smallestIndex1 = smallestDistIndex;
+
+
+        //for each voxel, find closest 3 points
+        /*for (int i = 0; i < m_voxelFeaturePoints.size(); i++)
+        {
+            int currentDistance = DistanceBetweenPoints(voxelPoint, m_voxelFeaturePoints[i]);
+            if (i == 0)
+            {
+                currentShortestDistance = currentDistance;
+            }
+            else
+            {
+                if (currentDistance < currentShortestDistance)
+                {
+
+                }
+            }
+        }*/
+
     }
 
 
     //std::cout << "Number of feature points matched to voxel squares = " << m_voxelFeaturePoints.size() << std::endl;
-    std::cout << "Number of verticies found = " << m_verticies.size() << std::endl;
+    //std::cout << "Number of verticies found = " << m_verticies.size() << std::endl;
 
 }
 
