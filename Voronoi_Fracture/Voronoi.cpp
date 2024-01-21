@@ -12,21 +12,6 @@ Voronoi::Voronoi()
         RandomiseFeaturePointPosition(featurepoint);
         m_featurePoints.push_back(featurepoint);
     }
-
-    int voxelWidth = m_cubeSize / m_voxelSubdivisionSize;//200
-    int voxelHeight = m_cubeSize / m_voxelSubdivisionSize;//200
-
-    for (int y = 0; y < voxelHeight; y++)
-    {
-        for (int x = 0; x < voxelWidth; x++)
-        {
-            int voxelX = x * m_voxelSubdivisionSize + (m_voxelSubdivisionSize / 2) + m_borderWidth; // position of midpoint in subdivision
-            int voxelY = y * m_voxelSubdivisionSize + (m_voxelSubdivisionSize / 2) + m_borderWidth; // position of midpoint in subdivision
-            m_voxelSubdivision.push_back(sf::Vector2f(voxelX, voxelY));
-        }
-    }
-    
-    std::cout << "Number of voxels = " << m_voxelSubdivision.size() << std::endl;;
     
 }
 
@@ -75,8 +60,7 @@ void Voronoi::Run()
                 //start algorithm
                 if (!m_startedSim)
                 {
-                    FindVertecies();
-                    std::cout << "started simulation" << std::endl;
+                    CreateBisectors();
                     m_startedSim = true;
                 }
 
@@ -103,108 +87,231 @@ void Voronoi::Update()
 
 void Voronoi::Reset()
 {
-    m_verticies.clear();
-    m_edgePoints.clear();
-    m_voxelFeaturePoints.clear();
+    parentLines.clear();
+    parentLineComparisions.clear();
+    finalBisectors.clear();
 }
 
-void Voronoi::FindVertecies()
+void Voronoi::CreateBisectors()
 {
-    std::cout << "Finding Verticies" << std::endl;
-    //m_voxelFeaturePoints.clear();
-
-    //find voxels that contain the feature points (Dont need this)
-    for (sf::Vector2f voxelPos : m_voxelSubdivision)
+    //finds parent lines
+    for (int i = 0; i < m_featurePoints.size(); i++)
     {
-        for (FeaturePoint featurePoint : m_featurePoints)
+
+        parentLines.clear();
+        parentLineComparisions.clear();
+
+        for (int j = 0; j < m_featurePoints.size(); j++)
         {
-            if (featurePoint.position.x >= (voxelPos.x - (m_voxelSubdivisionSize / 2)) && featurePoint.position.x < voxelPos.x + (m_voxelSubdivisionSize / 2)
-                && featurePoint.position.y >= voxelPos.y - (m_voxelSubdivisionSize / 2) && featurePoint.position.y < voxelPos.y + (m_voxelSubdivisionSize / 2))
+            if (i != j)//not the same point
             {
-                m_voxelFeaturePoints.push_back(voxelPos);
-            }
-        }
-    }
-
-    std::cout << "Found Voxel Feature Points" << std::endl;
-
-    //Search through voxels
-    //vertex is where each of ITS NEAREST feature points are equi-distant
-
-    std::vector<int> pointDistances;
-    sf::Vector2f point1, point2, point3, midpoint;
-    int dist1, dist2, dist3, currentDist;
-    int xMid, yMid;
-
-    //for each voxel, we find its closet 3 feature points
-    for (sf::Vector2f voxelPoint : m_voxelSubdivision)
-    {
-        pointDistances.clear();
-        for (sf::Vector2f voxFeaturePointDists : m_voxelFeaturePoints)
-        {
-            pointDistances.push_back(DistanceBetweenPoints(voxelPoint, voxFeaturePointDists));
-        }
-
-        std::sort(pointDistances.begin(), pointDistances.end());//sorts all feature point positions in ascending order
-
-        for (sf::Vector2f voxFeaturePoint : m_voxelFeaturePoints)//points 1 2 and 3 are this voxel's 3 closest feature points
-        {
-            currentDist = DistanceBetweenPoints(voxelPoint, voxFeaturePoint);
-            if (currentDist == pointDistances[0])
-                point1 = voxFeaturePoint;
-            else if (currentDist == pointDistances[1])
-                point2 = voxFeaturePoint;
-            else if (currentDist == pointDistances[2])
-                point3 = voxFeaturePoint;
-        }
-
-        //find midpoint of trio
-        xMid = (point1.x + point2.x + point3.x) / 3;// average x positions
-        yMid = (point1.y + point2.y + point3.y) / 3;// average y positions
-        midpoint = sf::Vector2f(xMid, yMid);
-
-        //find midpoint in voxel space
-        for (sf::Vector2f voxelPos : m_voxelSubdivision)
-        {
-            if (midpoint.x >= (voxelPos.x - (m_voxelSubdivisionSize / 2)) && midpoint.x < voxelPos.x + (m_voxelSubdivisionSize / 2)
-                && midpoint.y >= voxelPos.y - (m_voxelSubdivisionSize / 2) && midpoint.y < voxelPos.y + (m_voxelSubdivisionSize / 2))
-            {
-                midpoint = voxelPos;
+                bool sameLine = false;
+                ParentLine newParentLine;
+                newParentLine.startPoint = m_featurePoints[i].position;
+                newParentLine.endPoint = m_featurePoints[j].position;
+                newParentLine.length = DistanceBetweenPoints(newParentLine.startPoint, newParentLine.endPoint);
+                newParentLine.direction = (newParentLine.endPoint - newParentLine.startPoint) / newParentLine.length;
+                parentLines.push_back(newParentLine);
             }
         }
 
-        if (midpoint == voxelPoint)
+        //find bisectors
+        for (int i = 0; i < parentLines.size(); i++)
         {
-            m_verticies.push_back(voxelPoint);
+            parentLines[i].bisector.position = parentLines[i].startPoint + (parentLines[i].direction * (parentLines[i].length / 2));
+            parentLines[i].bisector.direction.x = parentLines[i].direction.y * -1;
+            parentLines[i].bisector.direction.y = parentLines[i].direction.x;
         }
 
-        ///////////////////////////////////////////////////////////////////- Testing edge finding
-        //find midpoint of trio
-        //xMid = (point1.x + point2.x) / 2;// average x positions
-        //yMid = (point1.y + point2.y) / 2;// average y positions
-        //midpoint = sf::Vector2f(xMid, yMid);
+        //copy parent lines into parentLineComparisions
+        for (int p = 0; p < parentLines.size(); p++)
+        {
+            ParentLine parentLine = parentLines[p];
+            parentLineComparisions.push_back(parentLine);
+        }
 
-        ////find midpoint in voxel space
-        //for (sf::Vector2f voxelPos : m_voxelSubdivision)
-        //{
-        //    if (midpoint.x >= (voxelPos.x - (m_voxelSubdivisionSize / 2)) && midpoint.x < voxelPos.x + (m_voxelSubdivisionSize / 2)
-        //        && midpoint.y >= voxelPos.y - (m_voxelSubdivisionSize / 2) && midpoint.y < voxelPos.y + (m_voxelSubdivisionSize / 2))
-        //    {
-        //        midpoint = voxelPos;
-        //    }
-        //}
+        //add wall lines to parentLineComparisions
+        ParentLine topWall;
+        topWall.bisector.position = sf::Vector2f(100, 100);//top left
+        topWall.bisector.direction = sf::Vector2f(100, 0);// topLeft->topRight vector
+        parentLineComparisions.push_back(topWall);
 
-        //if (midpoint == voxelPoint)
-        //{
-        //    m_edgePoints.push_back(voxelPoint);
-        //}
+        ParentLine rightWall;
+        rightWall.bisector.position = sf::Vector2f(900, 100);//top right
+        rightWall.bisector.direction = sf::Vector2f(0, 100);// topRight->bottomRight vector
+        parentLineComparisions.push_back(rightWall);
 
+        ParentLine bottomWall;
+        bottomWall.bisector.position = sf::Vector2f(900, 900);//bottom left
+        bottomWall.bisector.direction = sf::Vector2f(-100, 0);// bottomRight->bottomLeft vector
+        parentLineComparisions.push_back(bottomWall);
+
+        ParentLine leftWall;
+        leftWall.bisector.position = sf::Vector2f(100, 900);//bottom left
+        leftWall.bisector.direction = sf::Vector2f(0, -100);// bottomLeft->topLeft vector
+        parentLineComparisions.push_back(leftWall);
+
+
+        for (int i = 0; i < parentLines.size(); i++)
+        {
+            int numIntersections = 0;
+
+            sf::Vector2f clostestIntersection1;
+            float closestDistance1 = 0;
+            sf::Vector2f clostestIntersection2;
+            float closestDistance2 = 0;
+
+            float featurePointDist1 = 0;
+            float featurePointDist2 = 0;
+
+            for (int j = 0; j < parentLineComparisions.size(); j++)
+            {
+                if (i != j)//not the same point
+                {
+                    //check bisectors for intersections.
+                    int x1 = parentLines[i].bisector.position.x;
+                    int y1 = parentLines[i].bisector.position.y;
+                    float mx1 = parentLines[i].bisector.direction.x;
+                    float my1 = parentLines[i].bisector.direction.y;
+
+                    int x2 = parentLineComparisions[j].bisector.position.x;
+                    int y2 = parentLineComparisions[j].bisector.position.y;
+                    float mx2 = parentLineComparisions[j].bisector.direction.x;
+                    float my2 = parentLineComparisions[j].bisector.direction.y;
+
+                    double top = (my2 * (x1 - x2)) - (mx2 * (y1 - y2));
+                    double bottom = (mx2 * my1) - (my2 * mx1);
+
+                    if (bottom != 0)//only continue if there is an intersection (lines are not parallel)
+                    {
+                        double t = top / bottom;
+
+                        sf::Vector2f intersectionPos = sf::Vector2f(x1 + (mx1 * t), y1 + (my1 * t));
+
+                        float intersectionDist = DistanceBetweenPoints(parentLines[i].bisector.position, intersectionPos);
+
+                        //start comparing intersections to find closest to parent line
+
+                        if (j >= parentLineComparisions.size() - 4)
+                        {
+                            //looking at wall connections
+
+                            featurePointDist1 = DistanceBetweenPoints(parentLines[i].startPoint, intersectionPos);
+                            featurePointDist2 = DistanceBetweenPoints(parentLines[i].endPoint, intersectionPos);
+
+                            bool badIntersection = false;
+
+                            for (int fp = 0; fp < m_featurePoints.size(); fp++)
+                            {
+                                float distance = DistanceBetweenPoints(intersectionPos, m_featurePoints[fp].position);
+
+                                if (distance < featurePointDist1 && distance < featurePointDist2)
+                                {
+                                    //bad intersection, another wall is preffered.
+                                    badIntersection = true;
+                                }
+
+                            }
+
+                            if (!badIntersection)
+                            {
+                                if (numIntersections == 0)
+                                {
+                                    closestDistance1 = intersectionDist;
+                                    clostestIntersection1 = intersectionPos;
+                                    numIntersections++;
+                                }
+                                else if (numIntersections == 1)
+                                {
+                                    if (intersectionDist < closestDistance1)
+                                    {
+                                        closestDistance2 = closestDistance1;
+                                        clostestIntersection2 = clostestIntersection1;
+                                        closestDistance1 = intersectionDist;
+                                        clostestIntersection1 = intersectionPos;
+                                    }
+                                    else
+                                    {
+                                        closestDistance2 = intersectionDist;
+                                        clostestIntersection2 = intersectionPos;
+                                    }
+                                    numIntersections++;
+                                }
+                                else
+                                {
+                                    if (intersectionDist < closestDistance2)
+                                    {
+                                        if (intersectionDist < closestDistance1)
+                                        {
+                                            closestDistance2 = closestDistance1;
+                                            clostestIntersection2 = clostestIntersection1;
+                                            closestDistance1 = intersectionDist;
+                                            clostestIntersection1 = intersectionPos;
+                                        }
+                                        else
+                                        {
+                                            closestDistance2 = intersectionDist;
+                                            clostestIntersection2 = intersectionPos;
+                                        }
+                                    }
+                                    numIntersections++;
+                                }
+                            }
+
+                        }
+                        else if (numIntersections == 0)
+                        {
+                            closestDistance1 = intersectionDist;
+                            clostestIntersection1 = intersectionPos;
+                            numIntersections++;
+                        }
+                        else if (numIntersections == 1)
+                        {
+                            if (intersectionDist < closestDistance1)
+                            {
+                                closestDistance2 = closestDistance1;
+                                clostestIntersection2 = clostestIntersection1;
+                                closestDistance1 = intersectionDist;
+                                clostestIntersection1 = intersectionPos;
+                            }
+                            else
+                            {
+                                closestDistance2 = intersectionDist;
+                                clostestIntersection2 = intersectionPos;
+                            }
+                            numIntersections++;
+                        }
+                        else
+                        {
+                            if (intersectionDist < closestDistance2)
+                            {
+                                if (intersectionDist < closestDistance1)
+                                {
+                                    closestDistance2 = closestDistance1;
+                                    clostestIntersection2 = clostestIntersection1;
+                                    closestDistance1 = intersectionDist;
+                                    clostestIntersection1 = intersectionPos;
+                                }
+                                else
+                                {
+                                    closestDistance2 = intersectionDist;
+                                    clostestIntersection2 = intersectionPos;
+                                }
+                            }
+                            numIntersections++;
+                        }
+                    }
+                }
+            }
+
+            // set start point and end point to closest two intersections
+            parentLines[i].bisector.startPoint = clostestIntersection1;
+            parentLines[i].bisector.endPoint = clostestIntersection2;
+
+            finalBisectors.push_back(parentLines[i].bisector);
+
+        }
     }
-
-
-    //std::cout << "Number of feature points matched to voxel squares = " << m_voxelFeaturePoints.size() << std::endl;
-    std::cout << "Number of verticies found = " << m_verticies.size() << std::endl;
-
 }
 
 float Voronoi::DistanceBetweenPoints(sf::Vector2f point1, sf::Vector2f point2)
@@ -212,8 +319,7 @@ float Voronoi::DistanceBetweenPoints(sf::Vector2f point1, sf::Vector2f point2)
     int xDist = abs(point2.x - point1.x);
     int yDist = abs(point2.y - point1.y);
 
-    //return sqrt(pow(xDist, 2) + pow(yDist, 2));
-    return pow(xDist, 2) + pow(yDist, 2);//as this is only ever used for comparrisons, we dont nee
+    return sqrt(pow(xDist, 2) + pow(yDist, 2));
 }
 
 void Voronoi::RandomiseFeaturePointPosition(FeaturePoint& featurePoint)
@@ -241,11 +347,9 @@ void Voronoi::Draw(sf::RenderWindow& window)
     shape.setOutlineThickness(2);
     window.draw(shape);
 
-    //DrawVoxels(window);
-
     DrawFeaturePoints(window);
 
-    DrawVerticies(window);
+    DrawBisectors(window);
 }
 
 void Voronoi::DrawFeaturePoints(sf::RenderWindow& window)
@@ -263,44 +367,17 @@ void Voronoi::DrawFeaturePoints(sf::RenderWindow& window)
     }
 }
 
-void Voronoi::DrawVoxels(sf::RenderWindow& window)
+void Voronoi::DrawBisectors(sf::RenderWindow& window)
 {
-    //draw voxels as squares
-    for (sf::Vector2f boxPos : m_voxelSubdivision)
+    for (int i = 0; i < finalBisectors.size(); i++)
     {
-        sf::RectangleShape shape(sf::Vector2f(m_voxelSubdivisionSize, m_voxelSubdivisionSize));
-        shape.setOrigin(sf::Vector2f(m_voxelSubdivisionSize / 2, m_voxelSubdivisionSize / 2));
-        shape.setPosition(boxPos);
-        shape.setFillColor(sf::Color::Black);
-        shape.setOutlineColor(sf::Color(189, 189, 189, 255));
-        shape.setOutlineThickness(1);
-        window.draw(shape);
-    }
-    
-}
+        sf::Vertex line[] =
+        {
+            sf::Vertex(finalBisectors[i].startPoint),
+            sf::Vertex(finalBisectors[i].endPoint),
+        };
 
-void Voronoi::DrawVerticies(sf::RenderWindow& window)
-{
-    //draw vertecies
-    int radius = 4;
-    for (sf::Vector2f vertex : m_verticies)
-    {
-        sf::CircleShape dot(radius);
-        dot.setOrigin(sf::Vector2f(radius, radius));//set origin to mid point
-        dot.setPosition(vertex);
-        dot.setFillColor(sf::Color::Red);
-
-        window.draw(dot);
+        window.draw(line, 2, sf::Lines);
     }
 
-    //draw edges (test)
-    //for (sf::Vector2f edge : m_edgePoints)
-    //{
-    //    sf::CircleShape dot(radius);
-    //    dot.setOrigin(sf::Vector2f(radius, radius));//set origin to mid point
-    //    dot.setPosition(edge);
-    //    dot.setFillColor(sf::Color::Magenta);
-
-    //    window.draw(dot);
-    //}
 }
